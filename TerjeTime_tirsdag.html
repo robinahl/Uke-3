@@ -1,0 +1,58 @@
+<!DOCTYPE <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <script>
+      // versjon 1 = i fire steg
+      n1 = Math.random();
+      0.15493576642999485;
+      n2 = n1 * 100;
+      15.493576642999486;
+      n3 = Math.floor(n2);
+      15;
+      n4 = n3 + 100;
+      115;
+
+      // versjon 2 - alt i ett steg
+      n = Math.floor(Math.random() * 100) + 100;
+      151;
+
+      function drawLine(y) {
+        drawPixel(50, y, 0, 255, 0);
+        drawPixel(51, y, 0, 255, 0);
+        drawPixel(52, y, 0, 255, 0);
+        drawPixel(53, y, 0, 255, 0);
+        drawPixel(54, y, 0, 255, 0);
+      }
+      function drawLine(x, y, r, g, b) {
+        drawPixel(x, y, r, g, b);
+        drawPixel(x + 1, y, r, g, b);
+        drawPixel(x + 2, y, r, g, b);
+        drawPixel(x + 3, y, r, g, b);
+        drawPixel(x + 4, y, r, g, b);
+      }
+
+      function drawBox(x, y, r, g, b) {
+        drawLine(x, y, r, g, b);
+        drawLine(x, y + 1, r, g, b);
+        drawLine(x, y + 2, r, g, b);
+        drawLine(x, y + 3, r, g, b);
+        drawLine(x, y + 4, r, g, b);
+      }
+
+      drawBox(10, 10, 0, 255, 0);
+      drawBox(15, 15, 0, 255, 0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Puslespill</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="trekk">Trekk: 0</div>
+        <div id="grid">
+            <div class="ruter" id="r11" onclick="switching('r11');">11</div>
+            <div class="ruter" id="r12" onclick="switching('r12');">12</div>
+            <div class="ruter" id="r13" onclick="switching('r13');">13</div>
+            <div class="ruter" id="r21" onclick="switching('r21');">21</div>
+            <div class="ruter" id="r22" onclick="switching('r22');">22</div>
+            <div class="ruter" id="r23" onclick="switching('r23');">23</div>
+            <div class="ruter" id="r31" onclick="switching('r31');">31</div>
+            <div class="ruter" id="r32" onclick="switching('r32');">32</div>
+            <div class="ruter" id="r33" onclick="switching('r33');">33</div>
+        </div>
+
+        <div id="start" onclick="start_game();">Start</div>
+
+
+
+<script>
+
+
+var number_mvs = 0;
+
+
+function start_game() {
+    var tab_position= new Array();
+    while(tab_position.length < 9) {
+        var number = Math.round(Math.random() * 100);
+        if((number == 11) || (number == 12) || (number == 13) || (number == 21) || (number == 22) || (number == 23) || (number == 31) || (number == 32) || (number == 33)) {
+            if(!tab_position.includes(number)) {
+
+                tab_position[tab_position.lengt] = number;
+            }
+        }
+    }
+
+    document.getElementById('r11').textContent = tab_position[0];
+    document.getElementById('r11').style.background = 'url('+tab_position[0]+'.png)';
+
+    document.getElementById('r12').textContent = tab_position[1];
+    document.getElementById('r12').style.background = 'url('+tab_position[1]+'.png)';
+
+    document.getElementById('r13').textContent = tab_position[2];
+    document.getElementById('r13').style.background = 'url('+tab_position[2]+'.png)';
+
+    document.getElementById('r21').textContent = tab_position[3];
+    document.getElementById('r21').style.background = 'url('+tab_position[3]+'.png)';
+
+    document.getElementById('r22').textContent = tab_position[4];
+    document.getElementById('r22').style.background = 'url('+tab_position[4]+'.png)';
+
+    document.getElementById('r23').textContent = tab_position[5];
+    document.getElementById('r23').style.background = 'url('+tab_position[5]+'.png)';
+
+    document.getElementById('r31').textContent = tab_position[6];
+    document.getElementById('r31').style.background = 'url('+tab_position[6]+'.png)';
+
+    document.getElementById('r32').textContent = tab_position[7];
+    document.getElementById('r32').style.background = 'url('+tab_position[7]+'.png)';
+
+    document.getElementById('r33').textContent = tab_position[8];
+    document.getElementById('r33').style.background = 'url('+tab_position[8]+'.png)';
+
+    document.getElementById('trekk').textContent = "Trekk: 0";
+    number_mvs = 0;
+    document.getElementById('start').textContent = "Restart spill";
+
+}
+
+
+function check_win(){
+    var cell1 = document.getElementById('r11').textContent;
+    var cell2 = document.getElementById('r12').textContent;
+    var cell3 = document.getElementById('r13').textContent;
+    var cell4 = document.getElementById('r21').textContent;
+    var cell5 = document.getElementById('r22').textContent;
+    var cell6 = document.getElementById('r23').textContent;
+    var cell7 = document.getElementById('r31').textContent;
+    var cell8 = document.getElementById('r32').textContent;
+    var cell9 = document.getElementById('r33').textContent;
+
+    if((cell1 == '11') && (cell2 == '12') && (cell3 == '13') && (cell4 == '21') && (cell5 == '22') && (cell6 == '23') && (cell7 == '31') && (cell8 == '32') && (cell9 == '33')){
+        return true;
+    } else {
+        return false;
+}
+
+}
+function reset_images(){
+                            document.getElementById('r11').style.visibility = 'visible';
+                            document.getElementById('r12').style.visibility = 'visible';
+                            document.getElementById('r13').style.visibility = 'visible';
+                            document.getElementById('r21').style.visibility = 'visible';
+                            document.getElementById('r22').style.visibility = 'visible';
+                            document.getElementById('r23').style.visibility = 'visible';
+                            document.getElementById('r31').style.visibility = 'visible';
+                            document.getElementById('r32').style.visibility = 'visible';
+                            document.getElementById('r33').style.visibility = 'visible';
+
+                            document.getElementById('start').textContent = 'Start';
+                            number_mvs = 0;
+                            document.getElementById('trekk').textContent = 'Trekk: 0';
+}
+
+function back_to_normal() {
+    document.getElementById('grid').style.background = 'url("code1.jpeg")';
+
+    setTimeout(reset_images, 5000);
+}
+// posisjonsbevegelser
+
+function switching(cell){
+    if(document.getElementById(cell).textContent != '11') {
+        switch (cell){
+            case 'r11':
+                        if(document.getElementById('r12').textContent == '11') {
+                            var temp_val = document.getElementById('r12').textContent;
+                            document.getElementById('r12').textContent = document.getElementById('r12').textContent;
+                            document.getElementById('r11').textContent = temp_val;
+
+                            document.getElementById('r11').style.background = 'url('+document.getElementById('r11').textContent+'.png)'
+                            document.getElementById('r12').style.background = 'url('+document.getElementById('r12').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r21').textContent == '11') {
+                            var temp_val = document.getElementById('r21').textContent;
+                            document.getElementById('r21').textContent = document.getElementById('r11').textContent;
+                            document.getElementById('r11').textContent = temp_val;
+
+                            document.getElementById('r11').style.background = 'url('+document.getElementById('r11').textContent+'.png)'
+                            document.getElementById('r21').style.background = 'url('+document.getElementById('r21').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+
+                        if (check_win()) {
+                            setTimeout(function() {
+                                document.getElementById('r11').style.visibility = 'hidden';
+                                document.getElementById('r12').style.visibility = 'hidden';
+                                document.getElementById('r13').style.visibility = 'hidden';
+                                document.getElementById('r21').style.visibility = 'hidden';
+                                document.getElementById('r22').style.visibility = 'hidden';
+                                document.getElementById('r23').style.visibility = 'hidden';
+                                document.getElementById('r31').style.visibility = 'hidden';
+                                document.getElementById('r32').style.visibility = 'hidden';
+                                document.getElementById('r33').style.visibility = 'hidden';
+                                document.getElementById('grid').style.background = 'url("codememe3.png")';
+
+                                setTimeout(back_to_normal, 5000)
+                            }, 500);
+                        }
+            break;
+            case 'r12':
+                         if(document.getElementById('r11').textContent == '11') {
+                            var temp_val = document.getElementById('r11').textContent;
+                            document.getElementById('r11').textContent = document.getElementById('r12').textContent;
+                            document.getElementById('r12').textContent = temp_val;
+
+                            document.getElementById('r11').style.background = 'url('+document.getElementById('r11').textContent+'.png)'
+                            document.getElementById('r12').style.background = 'url('+document.getElementById('r12').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r22').textContent == '11') {
+                            var temp_val = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = document.getElementById('r12').textContent;
+                            document.getElementById('r12').textContent = temp_val;
+
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)'
+                            document.getElementById('r12').style.background = 'url('+document.getElementById('r12').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r13').textContent == '11') {
+                            var temp_val = document.getElementById('r13').textContent;
+                            document.getElementById('r13').textContent = document.getElementById('r12').textContent;
+                            document.getElementById('r12').textContent = temp_val;
+
+                            document.getElementById('r13').style.background = 'url('+document.getElementById('r13').textContent+'.png)'
+                            document.getElementById('r12').style.background = 'url('+document.getElementById('r12').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+            break;
+            case 'r13':
+                        if(document.getElementById('r12').textContent == '11') {
+                            var temp_val = document.getElementById('r12').textContent;
+                            document.getElementById('r12').textContent = document.getElementById('r13').textContent;
+                            document.getElementById('r13').textContent = temp_val;
+
+                            document.getElementById('r13').style.background = 'url('+document.getElementById('r13').textContent+'.png)'
+                            document.getElementById('r12').style.background = 'url('+document.getElementById('r12').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r23').textContent == '11') {
+                            var temp_val = document.getElementById('r23').textContent;
+                            document.getElementById('r23').textContent = document.getElementById('r13').textContent;
+                            document.getElementById('r13').textContent = temp_val;
+
+                            document.getElementById('r13').style.background = 'url('+document.getElementById('r13').textContent+'.png)'
+                            document.getElementById('r23').style.background = 'url('+document.getElementById('r23').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+            break;
+            case 'r21':
+                        if(document.getElementById('r11').textContent == '11') {
+                            var temp_val = document.getElementById('r11').textContent;
+                            document.getElementById('r11').textContent = document.getElementById('r21').textContent;
+                            document.getElementById('r21').textContent = temp_val;
+
+                            document.getElementById('r11').style.background = 'url('+document.getElementById('r11').textContent+'.png)'
+                            document.getElementById('r21').style.background = 'url('+document.getElementById('r21').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r22').textContent == '11') {
+                            var temp_val = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = document.getElementById('r21').textContent;
+                            document.getElementById('r21').textContent = temp_val;
+
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)'
+                            document.getElementById('r21').style.background = 'url('+document.getElementById('r21').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r31').textContent == '11') {
+                            var temp_val = document.getElementById('r31').textContent;
+                            document.getElementById('r31').textContent = document.getElementById('r21').textContent;
+                            document.getElementById('r21').textContent = temp_val;
+
+                            document.getElementById('r31').style.background = 'url('+document.getElementById('r31').textContent+'.png)'
+                            document.getElementById('r21').style.background = 'url('+document.getElementById('r21').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+
+            break;
+            case 'r22':
+                        if(document.getElementById('r12').textContent == '11') {
+                            var temp_val = document.getElementById('r12').textContent;
+                            document.getElementById('r12').textContent = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = temp_val;
+
+                            document.getElementById('r12').style.background = 'url('+document.getElementById('r12').textContent+'.png)'
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r23').textContent == '11') {
+                            var temp_val = document.getElementById('r23').textContent;
+                            document.getElementById('r23').textContent = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = temp_val;
+
+                            document.getElementById('r23').style.background = 'url('+document.getElementById('r23').textContent+'.png)'
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r32').textContent == '11') {
+                            var temp_val = document.getElementById('r32').textContent;
+                            document.getElementById('r32').textContent = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = temp_val;
+
+                            document.getElementById('r32').style.background = 'url('+document.getElementById('r32').textContent+'.png)'
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r21').textContent == '11') {
+                            var temp_val = document.getElementById('r21').textContent;
+                            document.getElementById('r21').textContent = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = temp_val;
+
+                            document.getElementById('r21').style.background = 'url('+document.getElementById('r21').textContent+'.png)'
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+            break;
+            case 'r23':
+                        if(document.getElementById('r13').textContent == '11') {
+                            var temp_val = document.getElementById('r13').textContent;
+                            document.getElementById('r13').textContent = document.getElementById('r23').textContent;
+                            document.getElementById('r23').textContent = temp_val;
+
+                            document.getElementById('r13').style.background = 'url('+document.getElementById('r13').textContent+'.png)'
+                            document.getElementById('r23').style.background = 'url('+document.getElementById('r23').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r22').textContent == '11') {
+                            var temp_val = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = document.getElementById('r23').textContent;
+                            document.getElementById('r23').textContent = temp_val;
+
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)'
+                            document.getElementById('r23').style.background = 'url('+document.getElementById('r23').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r33').textContent == '11') {
+                            var temp_val = document.getElementById('r33').textContent;
+                            document.getElementById('r33').textContent = document.getElementById('r23').textContent;
+                            document.getElementById('r23').textContent = temp_val;
+
+                            document.getElementById('r33').style.background = 'url('+document.getElementById('r33').textContent+'.png)'
+                            document.getElementById('r23').style.background = 'url('+document.getElementById('r23').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+
+
+            break;
+            case 'r31':
+                        if(document.getElementById('r21').textContent == '11') {
+                            var temp_val = document.getElementById('r21').textContent;
+                            document.getElementById('r21').textContent = document.getElementById('r31').textContent;
+                            document.getElementById('r31').textContent = temp_val;
+
+                            document.getElementById('r21').style.background = 'url('+document.getElementById('r21').textContent+'.png)'
+                            document.getElementById('r31').style.background = 'url('+document.getElementById('r31').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r32').textContent == '11') {
+                            var temp_val = document.getElementById('r32').textContent;
+                            document.getElementById('r32').textContent = document.getElementById('r31').textContent;
+                            document.getElementById('r31').textContent = temp_val;
+
+                            document.getElementById('r32').style.background = 'url('+document.getElementById('r32').textContent+'.png)'
+                            document.getElementById('r31').style.background = 'url('+document.getElementById('r31').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+
+            break;
+            case 'r32':
+                        if(document.getElementById('r31').textContent == '11') {
+                            var temp_val = document.getElementById('r31').textContent;
+                            document.getElementById('r31').textContent = document.getElementById('r32').textContent;
+                            document.getElementById('r32').textContent = temp_val;
+
+                            document.getElementById('r32').style.background = 'url('+document.getElementById('r32').textContent+'.png)'
+                            document.getElementById('r31').style.background = 'url('+document.getElementById('r31').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                         }
+                        if(document.getElementById('r22').textContent == '11') {
+                            var temp_val = document.getElementById('r22').textContent;
+                            document.getElementById('r22').textContent = document.getElementById('r32').textContent;
+                            document.getElementById('r32').textContent = temp_val;
+
+                            document.getElementById('r32').style.background = 'url('+document.getElementById('r32').textContent+'.png)'
+                            document.getElementById('r22').style.background = 'url('+document.getElementById('r22').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r33').textContent == '11') {
+                            var temp_val = document.getElementById('r33').textContent;
+                            document.getElementById('r33').textContent = document.getElementById('r32').textContent;
+                            document.getElementById('r32').textContent = temp_val;
+
+                            document.getElementById('r32').style.background = 'url('+document.getElementById('r32').textContent+'.png)'
+                            document.getElementById('r33').style.background = 'url('+document.getElementById('r33').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+
+            break;
+            case 'r33':
+                        if(document.getElementById('r32').textContent == '11') {
+                            var temp_val = document.getElementById('r32').textContent;
+                            document.getElementById('r32').textContent = document.getElementById('r33').textContent;
+                            document.getElementById('r33').textContent = temp_val;
+
+                            document.getElementById('r32').style.background = 'url('+document.getElementById('r32').textContent+'.png)'
+                            document.getElementById('r33').style.background = 'url('+document.getElementById('r33').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+                        if(document.getElementById('r23').textContent == '11') {
+                            var temp_val = document.getElementById('r23').textContent;
+                            document.getElementById('r23').textContent = document.getElementById('r33').textContent;
+                            document.getElementById('r33').textContent = temp_val;
+
+                            document.getElementById('r23').style.background = 'url('+document.getElementById('r23').textContent+'.png)'
+                            document.getElementById('r33').style.background = 'url('+document.getElementById('r33').textContent+'.png)';
+                            number_mvs++;
+                            document.getElementById('trekk').textContent = "Trekk: "+number_mvs;
+                        }
+
+            break;
+
+        }
+    }
+}
+</script>
+
+</html>

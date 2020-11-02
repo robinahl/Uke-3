@@ -1,0 +1,97 @@
+body {
+  background-color:grey;
+}
+#grid {
+  width: 800px;
+  height: 800px;
+  border: 5px solid grey;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 1px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #999;
+  box-shadow: 0px 0px 20px white;
+}
+
+.ruter {
+  height: 265px;
+  width: 265px;
+  font-size: 0.1px;
+}
+
+#r11 {
+  background: url(Earth_blank.png);
+  background-position: center;
+}
+#r12 {
+  background: url(Earth_topm.png);
+  background-position: center;
+}
+#r13 {
+  background: url(Earth_toph.png);
+  background-position: center;
+}
+#r21 {
+  background: url(Earth_midtv.png);
+  background-position: center;
+}
+#r22 {
+  background: url(Earth_midt.png);
+  background-position: center;
+}
+#r23 {
+  background: url(Earth_midth.png);
+  background-position: center;
+}
+#r31 {
+  background: url(Earth_botv.png);
+  background-position: center;
+}
+#r32 {
+  background: url(Earth_botm.png);
+  background-position: center;
+}
+#r33 {
+  background: url(Earth_both.png);
+  background-position: center;
+}
+#start {
+    width: 170px;
+    margin: auto;
+    margin-top: 20px;
+    border: 2px solid #999;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 10px;
+    color: black;
+    background-color: #999;
+    box-shadow: 0px 0px 20px #ffffff;
+    text-shadow: 0px 0px 10px #000000;
+    cursor: pointer;
+    font-family: 'Arial';
+    font-size: 25px;
+}
+#start:hover {
+    color: #ba6f00;
+    text-shadow: 0px 0px 10px #BA6F00;
+}
+#trekk {
+    width: 233px;
+    margin: auto;
+    margin-top: 50px;
+    border: 2px solid #999;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 10px;
+    color: #000;
+    background-color: #999;
+    box-shadow: 0px 0px 20px #FFF;
+    text-shadow: 0px 0px 10px #000;
+    cursor: pointer;
+    font-family: 'Arial';
+    font-size: 25px;
+}

@@ -1,0 +1,110 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .knapp{
+        position: relative;
+        top: 10px;
+        height: 15px;
+        width: 30px;
+        border: 1px solid black;
+        border-radius: 10%;
+        padding: 10px;
+        display: flex;
+        align-content: center;
+        text-align: center;
+        justify-content: center;
+        float: left;
+    }
+
+    .knapp3{
+    clear:left;
+
+    }
+    #skjerm{
+        font-size: x-large;
+        text-align: right;
+        height: 50px;
+        width: 200px;
+        border: 2px solid black;
+    }
+
+
+
+
+
+</style>
+
+</head>
+<body>
+ <!-- knapper -->
+ <!-- div eller span    -->
+<!-- vise fram output -->
+<!-- funksjoner -->
+<div>
+<div id="skjerm" >Display</div>
+
+<div class="knapp" onclick="selectNumber(this)">1</div>
+<div class="knapp" onclick="selectNumber(this)">2</div>
+<div class="knapp"  onclick="selectNumber(this)">3</div>
+<div class="knapp " onclick="selectNumber(this)">+</div>
+
+<div class="knapp knapp3"  onclick="selectNumber(this)">4</div>
+<div class="knapp"  onclick="selectNumber(this)">5</div>
+<div class="knapp "  onclick="selectNumber(this)">6</div>
+<div class="knapp " onclick="selectNumber(this)">-</div>
+
+<div class="knapp knapp3 " onclick="selectNumber(this)">7</div>
+<div class="knapp"  onclick="selectNumber(this)">8</div>
+<div class="knapp "  onclick="selectNumber(this)">9</div>
+<div class="knapp" onclick="selectNumber(this)">*</div>
+
+
+<div class="knapp knapp3"  onclick="backspace()">Clear</div>
+<div class="knapp "  onclick="selectNumber(this)">0</div>
+<div class="knapp" onclick="doMathThing()">=</div>
+<div class="knapp"onclick="selectNumber(this)">/</div>
+</div>
+
+<script>
+let displaynumber ="";
+        
+        function selectNumber(number){
+            displaynumber += number.innerHTML; 
+
+            document.getElementById("skjerm").innerHTML = displaynumber;
+        }
+        
+        function doMathThing(){
+               
+
+               let nyDisplay = eval(displaynumber);
+
+             document.getElementById("skjerm").innerHTML = nyDisplay;
+        }
+
+
+        function clearDIV(){
+            displaynumber ="";
+            document.getElementById("skjerm").innerHTML = displaynumber;
+        }
+
+        function backspace(){
+            displaynumber = displaynumber.slice(0,-1);
+         
+            document.getElementById("skjerm").innerHTML =  displaynumber;
+        }
+
+
+</script>
+
+
+
+</body>
+</html>
+
+

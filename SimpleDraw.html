@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple drawing</title>
+    <style>
+        #palette {
+            display: grid;
+            grid-template-columns: repeat(4, 3vw);
+        }
+
+        #palette>div {
+            width: 3vw;
+            height: 3vw;
+        }
+
+        #canvas {
+            display: grid;
+            grid-template-columns: repeat(30, 3vw);
+        }
+
+        #canvas>div {
+            width: 3vw;
+            height: 3vw;
+            border: solid 1px lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // global
+        var color;
+
+        function selectColor(selectedColorDiv) {
+            var displayColorDiv = document.getElementById('selectedColor');
+            // varer i noen sekunder
+            color = selectedColorDiv.style.backgroundColor;
+            displayColorDiv.style.backgroundColor = color;
+        }
+        function draw(pixelDiv) {
+            document.getElementById('selectedColor').style.backgroundColor;
+        }
+    </script>
+
+    <div id="page">
+        <b>Velg en farge:</b>
+        <div id="palette">
+            <div style="background-color: White;" onclick="selectColor(this)"></div>
+            <div style="background-color: Silver;" onclick="selectColor(this)"></div>
+            <div style="background-color: Gray;" onclick="selectColor(this)"></div>
+            <div style="background-color: Black;" onclick="selectColor(this)"></div>
+            <div style="background-color: Red;" onclick="selectColor(this)"></div>
+            <div style="background-color: Maroon;" onclick="selectColor(this)"></div>
+            <div style="background-color: Yellow;" onclick="selectColor(this)"></div>
+            <div style="background-color: Olive;" onclick="selectColor(this)"></div>
+            <div style="background-color: Lime;" onclick="selectColor(this)"></div>
+            <div style="background-color: Green;" onclick="selectColor(this)"></div>
+            <div style="background-color: Aqua;" onclick="selectColor(this)"></div>
+            <div style="background-color: Teal;" onclick="selectColor(this)"></div>
+            <div style="background-color: Blue;" onclick="selectColor(this)"></div>
+            <div style="background-color: Navy;" onclick="selectColor(this)"></div>
+            <div style="background-color: Fuchsia;" onclick="selectColor(this)"></div>
+            <div style="background-color: Purple;" onclick="selectColor(this)"></div>
+        </div>
+        <div>
+            <b>Du har valgt:</b>
+            <div id="selectedColor" style="width: 3vw;height: 3vw;border: solid 1px lightgray; background-color: Red;">
+            </div>
+        </div>
+        <b>Tegn her:</b>
+        <div id="canvas">
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+            <div onclick="draw(this)"></div>
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
